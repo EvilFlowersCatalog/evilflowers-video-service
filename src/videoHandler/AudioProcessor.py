@@ -1,6 +1,7 @@
-from config import Config
+from config.Config import Config
 from domain.model.Whisper import Whisper
-
+from typing import Union
+import numpy as np
 
 class AudioProcessor:
     
@@ -9,6 +10,9 @@ class AudioProcessor:
     def __init__(self):
         self._audio_to_text_processor = self._load_audio_to_text_processor()
 
+
+    def extract_text(self, audio_input: str) -> str:
+        return self._audio_to_text_processor.audio_to_text(audio_input)
 
     def _load_audio_to_text_processor(self):
         if self.config.get_config()['AUDIO_PROCESSOR_MODEL'] == 'Whisper':
