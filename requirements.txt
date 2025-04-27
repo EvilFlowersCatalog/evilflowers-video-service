@@ -4,5 +4,8 @@ torch==2.5.1
 transformers==4.46.2
 accelerate>=0.26.0
 
-# Kafka
+# Elasticsearch
+elasticsearch
+kibana
+git+https://github.com/0Kozlik0/EvilFlowerElasticsearch.git@main#egg=elvira_elasticsearch_client
 confluent_kafka
